@@ -4,7 +4,7 @@ fun main() {
     val target = 10
     val nums = intArrayOf(4,5,6)
    // val nums = intArrayOf(2,7,11,15)
-    println("printing the arry " + twoSum(nums,target).contentToString())
+    println("printing the arry " + twoSumOptimized(nums,target).contentToString())
 }
 
 
@@ -24,13 +24,13 @@ fun twoSum(numbs : IntArray, target:Int) : IntArray {
 //TwoSum - Optimized
 fun twoSumOptimized(numbs : IntArray, target:Int) : IntArray {
     val map = HashMap<Int, Int>()
-    for (i in numbs.iterator()) {
+    for (i in numbs.indices) {
         var complement = target - numbs[i]
         var index = map[complement]
         if(index != null) {
            return intArrayOf(index, i)
         }
-     map[complement] = i
+     map[numbs[i]] = i
     }
     return intArrayOf()
 }
