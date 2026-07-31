@@ -1,4 +1,4 @@
-package arrays
+package arrays.hashing
 
 fun main() {
     val target = 10

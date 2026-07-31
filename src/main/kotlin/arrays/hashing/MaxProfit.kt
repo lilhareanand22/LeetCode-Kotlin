@@ -1,6 +1,4 @@
-package arrays
-
-import kotlin.math.min
+package arrays.hashing
 
 fun main() {
 
