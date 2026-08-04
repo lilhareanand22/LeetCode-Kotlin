@@ -1,10 +1,10 @@
 package arrays.hashing
 
 fun main() {
-    val target = 10
-    val nums = intArrayOf(4,5,6)
-   // val nums = intArrayOf(2,7,11,15)
-    println("printing the arry " + twoSumOptimized(nums,target).contentToString())
+    val nums = intArrayOf(2, 7, 11, 15)
+    val target = 9
+
+    println(twoSumOptimized(nums, target).contentToString())
 }
 
 

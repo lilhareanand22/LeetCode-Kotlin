@@ -191,9 +191,9 @@ fun molecularWeightWithoutBracket(formula: String): Int {
     return totalWeight
 }
 fun main() {
-    val formula = "CH4"
-    val atomCounts = molecularWeightWithoutBracket(formula)
+    val formula = "Mg(OH)2"
+    val totalWeight = molecularWeight(formula)
 
-    println(atomCounts)
+    println("Molecular weight of $formula: $totalWeight")
 }
 

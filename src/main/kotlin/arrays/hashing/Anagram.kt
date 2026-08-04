@@ -1,7 +1,10 @@
 package arrays.hashing
 
 fun main() {
+    val s = "anagram"
+    val t = "nagaram"
 
+    println(isAnagram(s, t))
 }
 
 fun isAnagram(s:String, t:String) : Boolean {

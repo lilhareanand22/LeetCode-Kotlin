@@ -10,33 +10,33 @@ fun main() {
     }
 }
 
-fun productExceptSelfDivision(nums: IntArray): IntArray {
-    var totalProduct = 1
-    for(num in nums) {
-        totalProduct *= num
-    }
-    var result = IntArray(nums.size)
-
-    for (i in nums.indices) {
-        result[i] = totalProduct / nums[i]
-    }
-    return result
-
-}
-
-fun productExceptBrutForce(nums: IntArray): IntArray {
-    var result = IntArray(nums.size)
-    for (i in nums.indices) {
-        var product = 1
-        for ( j in nums.indices) {
-            if( i != j) {
-               product *= nums[j]
-            }
-            result[i] = product
-        }
-    }
-    return result
-}
+//fun productExceptSelfDivision(nums: IntArray): IntArray {
+//    var totalProduct = 1
+//    for(num in nums) {
+//        totalProduct *= num
+//    }
+//    var result = IntArray(nums.size)
+//
+//    for (i in nums.indices) {
+//        result[i] = totalProduct / nums[i]
+//    }
+//    return result
+//
+//}
+//
+//fun productExceptBrutForce(nums: IntArray): IntArray {
+//    var result = IntArray(nums.size)
+//    for (i in nums.indices) {
+//        var product = 1
+//        for ( j in nums.indices) {
+//            if( i != j) {
+//               product *= nums[j]
+//            }
+//            result[i] = product
+//        }
+//    }
+//    return result
+//}
 
 fun productExceptSelfPreFixAndSuffix(nums: IntArray): IntArray {
     val size = nums.size
