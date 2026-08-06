@@ -11,6 +11,7 @@ Concise notes for the algorithms in this repository. Start by recognizing the **
 | One-pass tracking | Keep the best, smallest, or largest value seen so far | Best Time to Buy and Sell Stock |
 | Sorting + mapping | Sort values first, then assign or compare positions | Rank Transform, Merge Intervals |
 | Binary search | Input is sorted, or one sorted half can be identified | Binary Search, Search Insert Position, Rotated Array Search |
+| Two pointers | Compare, scan, or rearrange from both ends of an array or string | Valid Palindrome |
 | Stack | Need most-recent unfinished work first; nested brackets or matching pairs | Valid Parentheses, Decode String, Count of Atoms, Molecular Weight |
 | String prefix | All strings must share the same beginning characters | Longest Common Prefix |
 
@@ -19,10 +20,11 @@ Concise notes for the algorithms in this repository. Start by recognizing the **
 1. **"Have I seen this before?"** → Use a `HashSet` or `HashMap`.
 2. **"Find two values that make a target."** → Store complements in a `HashMap`.
 3. **"The array is sorted."** → Consider binary search.
-4. **"Nested brackets / latest opening item must close first."** → Use a stack.
-5. **"Every answer needs left and right products."** → Use prefix and suffix arrays.
-6. **"Intervals overlap."** → Sort by start, then merge.
-7. **"Need best profit / minimum seen so far."** → Scan once while tracking the best value.
+4. **"Compare values from the beginning and end."** → Use two pointers.
+5. **"Nested brackets / latest opening item must close first."** → Use a stack.
+6. **"Every answer needs left and right products."** → Use prefix and suffix arrays.
+7. **"Intervals overlap."** → Sort by start, then merge.
+8. **"Need best profit / minimum seen so far."** → Scan once while tracking the best value.
 
 ## Array and Hashing
 
@@ -208,6 +210,32 @@ return -1
 ```
 
 Time: `O(log n)` · Space: `O(1)`
+
+## Two Pointers
+
+### Valid Palindrome
+
+**Pattern:** Two pointers moving inward from both ends.
+
+**Goal:** Check whether a string reads the same forward and backward after ignoring case and non-alphanumeric characters.
+
+```text
+left = first index; right = last index
+while left < right:
+    while left < right and left character is not a letter/digit:
+        move left rightward
+    while left < right and right character is not a letter/digit:
+        move right leftward
+    if lowercase(left character) != lowercase(right character):
+        return false
+    move left rightward
+    move right leftward
+return true
+```
+
+Example: `"A man, a plan, a canal: Panama"` returns `true`.
+
+Time: `O(n)` · Space: `O(1)`
 
 ## Stack and Strings
 
