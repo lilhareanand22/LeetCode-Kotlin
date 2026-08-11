@@ -11,7 +11,7 @@ Concise notes for the algorithms in this repository. Start by recognizing the **
 | One-pass tracking | Keep the best, smallest, or largest value seen so far | Best Time to Buy and Sell Stock |
 | Sorting + mapping | Sort values first, then assign or compare positions | Rank Transform, Merge Intervals |
 | Binary search | Input is sorted, or one sorted half can be identified | Binary Search, Search Insert Position, Rotated Array Search |
-| Two pointers | Compare, scan, or rearrange from both ends of an array or string | Valid Palindrome |
+| Two pointers | Compare, scan, or rearrange from both ends of an array or string | Valid Palindrome, Container With Most Water |
 | Stack | Need most-recent unfinished work first; nested brackets or matching pairs | Valid Parentheses, Decode String, Count of Atoms, Molecular Weight |
 | String prefix | All strings must share the same beginning characters | Longest Common Prefix |
 
@@ -234,6 +234,32 @@ return true
 ```
 
 Example: `"A man, a plan, a canal: Panama"` returns `true`.
+
+Time: `O(n)` · Space: `O(1)`
+
+### Container With Most Water
+
+**Pattern:** Two pointers moving inward from both ends.
+
+**Goal:** Find two vertical lines that hold the greatest amount of water. The area is the smaller height multiplied by the distance between the lines.
+
+```text
+left = first index; right = last index
+maxArea = 0
+while left < right:
+    width = right - left
+    currentArea = width * min(height[left], height[right])
+    maxArea = max(maxArea, currentArea)
+    if height[left] < height[right]:
+        move left rightward
+    else:
+        move right leftward
+return maxArea
+```
+
+Move the shorter line because it limits the water height. Moving the taller line reduces the width and cannot improve the limiting height.
+
+Example: `[1, 8, 6, 2, 5, 4, 8, 3, 7]` returns `49`.
 
 Time: `O(n)` · Space: `O(1)`
 
