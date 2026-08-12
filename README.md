@@ -11,7 +11,7 @@ Concise notes for the algorithms in this repository. Start by recognizing the **
 | One-pass tracking | Keep the best, smallest, or largest value seen so far | Best Time to Buy and Sell Stock |
 | Sorting + mapping | Sort values first, then assign or compare positions | Rank Transform, Merge Intervals |
 | Binary search | Input is sorted, or one sorted half can be identified | Binary Search, Search Insert Position, Rotated Array Search |
-| Two pointers | Compare, scan, or rearrange from both ends of an array or string | Valid Palindrome, Container With Most Water |
+| Two pointers | Compare, scan, or rearrange from both ends of an array or string | Valid Palindrome, Container With Most Water, Three Sum |
 | Stack | Need most-recent unfinished work first; nested brackets or matching pairs | Valid Parentheses, Decode String, Count of Atoms, Molecular Weight |
 | String prefix | All strings must share the same beginning characters | Longest Common Prefix |
 
@@ -262,6 +262,41 @@ Move the shorter line because it limits the water height. Moving the taller line
 Example: `[1, 8, 6, 2, 5, 4, 8, 3, 7]` returns `49`.
 
 Time: `O(n)` · Space: `O(1)`
+
+### Three Sum
+
+**Pattern:** Sort + two pointers.
+
+**Goal:** Find every unique triplet whose values add up to `0`.
+
+```text
+sort nums
+for each index i up to the third-last index:
+    skip i when it is the same as the previous value
+    left = i + 1; right = last index
+    while left < right:
+        sum = nums[i] + nums[left] + nums[right]
+        if sum < 0: move left rightward
+        else if sum > 0: move right leftward
+        else:
+            save [nums[i], nums[left], nums[right]]
+            skip duplicate left and right values
+            move both pointers inward
+return result
+```
+
+Dry run for `[-1, 0, 1, 2, -1, -4]`:
+
+```text
+Sorted: [-4, -1, -1, 0, 1, 2]
+i = 0 (-4): no zero-sum triplet is possible.
+i = 1 (-1), left = 2 (-1), right = 5 (2): sum = 0 -> [-1, -1, 2]
+i = 1 (-1), left = 3 (0), right = 4 (1):  sum = 0 -> [-1, 0, 1]
+i = 2 is skipped because -1 is a duplicate.
+Result: [[-1, -1, 2], [-1, 0, 1]]
+```
+
+Time: `O(n²)` · Space: `O(1)` excluding the returned result.
 
 ## Stack and Strings
 
