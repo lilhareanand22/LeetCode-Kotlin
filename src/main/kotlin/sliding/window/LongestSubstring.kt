@@ -1,11 +1,18 @@
 package sliding.window
 
-
 fun main() {
     val str = "zxyzxyz"
     println("Longest string ${lengthOfLongestSubstring(str)}")
 }
 
+/**
+ * Returns the length of the longest substring that contains no repeated characters.
+ *
+ * The set represents the current window, bounded by `left` and `right`. When a
+ * duplicate enters it, move `left` forward until the window is valid.
+ *
+ * Time: O(n), Space: O(min(n, character set size)).
+ */
 fun lengthOfLongestSubstring(s: String): Int {
 
     val set = HashSet<Char>()

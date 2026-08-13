@@ -12,6 +12,7 @@ Concise notes for the algorithms in this repository. Start by recognizing the **
 | Sorting + mapping | Sort values first, then assign or compare positions | Rank Transform, Merge Intervals |
 | Binary search | Input is sorted, or one sorted half can be identified | Binary Search, Search Insert Position, Rotated Array Search |
 | Two pointers | Compare, scan, or rearrange from both ends of an array or string | Valid Palindrome, Container With Most Water, Three Sum |
+| Sliding window | Find a longest, shortest, or counted contiguous subarray or substring | Longest Substring Without Repeating Characters |
 | Stack | Need most-recent unfinished work first; nested brackets or matching pairs | Valid Parentheses, Decode String, Count of Atoms, Molecular Weight |
 | String prefix | All strings must share the same beginning characters | Longest Common Prefix |
 
@@ -297,6 +298,33 @@ Result: [[-1, -1, 2], [-1, 0, 1]]
 ```
 
 Time: `O(n²)` · Space: `O(1)` excluding the returned result.
+
+## Sliding Window
+
+### Longest Substring Without Repeating Characters
+
+**Pattern:** Variable-size sliding window with a `HashSet`.
+
+**Goal:** Find the length of the longest contiguous substring with no repeated characters.
+
+```text
+seen = empty set
+left = 0
+maxLength = 0
+for right from 0 to last index:
+    while s[right] is in seen:
+        remove s[left] from seen
+        move left rightward
+    add s[right] to seen
+    maxLength = max(maxLength, right - left + 1)
+return maxLength
+```
+
+When a duplicate enters the window, move `left` until the duplicate is removed. The window therefore always contains unique characters.
+
+Example: `"zxyzxyz"` returns `3` for `"zxy"`.
+
+Time: `O(n)` · Space: `O(min(n, character set size))`
 
 ## Stack and Strings
 
