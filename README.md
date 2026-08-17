@@ -12,7 +12,7 @@ Concise notes for the algorithms in this repository. Start by recognizing the **
 | Sorting + mapping | Sort values first, then assign or compare positions | Rank Transform, Merge Intervals |
 | Binary search | Input is sorted, or one sorted half can be identified | Binary Search, Search Insert Position, Rotated Array Search |
 | Two pointers | Compare, scan, or rearrange from both ends of an array or string | Valid Palindrome, Container With Most Water, Three Sum |
-| Sliding window | Find a longest, shortest, or counted contiguous subarray or substring | Longest Substring Without Repeating Characters |
+| Sliding window | Find a longest, shortest, or counted contiguous subarray or substring | Longest Substring Without Repeating Characters, Longest Repeating Character Replacement |
 | Stack | Need most-recent unfinished work first; nested brackets or matching pairs | Valid Parentheses, Decode String, Count of Atoms, Molecular Weight |
 | String prefix | All strings must share the same beginning characters | Longest Common Prefix |
 
@@ -300,6 +300,41 @@ Result: [[-1, -1, 2], [-1, 0, 1]]
 Time: `O(n²)` · Space: `O(1)` excluding the returned result.
 
 ## Sliding Window
+
+### Longest Repeating Character Replacement
+
+**Pattern:** Variable-size sliding window with a frequency array.
+
+**Goal:** Find the longest substring that can contain only one repeated character after replacing at most `k` characters.
+
+```text
+frequency = array of 26 zeroes  // counts A through Z
+left = 0
+maxFrequency = 0
+maxLength = 0
+
+for right from 0 to last index:
+    index = s[right] - 'A'
+    frequency[index]++
+    maxFrequency = max(maxFrequency, frequency[index])
+
+    windowSize = right - left + 1
+    replacementsNeeded = windowSize - maxFrequency
+
+    if replacementsNeeded > k:
+        frequency[s[left] - 'A']--
+        move left rightward
+
+    maxLength = max(maxLength, right - left + 1)
+
+return maxLength
+```
+
+`s[right] - 'A'` converts uppercase letters into array indexes: `A -> 0`, `B -> 1`, ..., `Z -> 25`. The number of replacements needed is the window size minus the count of its most frequent character.
+
+Example: `"AABABBA"`, `k = 1` returns `4`. The substring `"AABA"` becomes `"AAAA"` by replacing one `B`.
+
+Time: `O(n)` · Space: `O(1)` because the frequency array always has 26 entries.
 
 ### Longest Substring Without Repeating Characters
 
