@@ -12,7 +12,7 @@ Concise notes for the algorithms in this repository. Start by recognizing the **
 | Sorting + mapping | Sort values first, then assign or compare positions | Rank Transform, Merge Intervals |
 | Binary search | Input is sorted, or one sorted half can be identified | Binary Search, Search Insert Position, Rotated Array Search |
 | Two pointers | Compare, scan, or rearrange from both ends of an array or string | Valid Palindrome, Container With Most Water, Three Sum |
-| Sliding window | Find a longest, shortest, or counted contiguous subarray or substring | Longest Substring Without Repeating Characters, Longest Repeating Character Replacement |
+| Sliding window | Find a longest, shortest, or counted contiguous subarray or substring | Longest Substring Without Repeating Characters, Longest Repeating Character Replacement, Minimum Window Substring |
 | Stack | Need most-recent unfinished work first; nested brackets or matching pairs | Valid Parentheses, Decode String, Count of Atoms, Molecular Weight |
 | String prefix | All strings must share the same beginning characters | Longest Common Prefix |
 
@@ -360,6 +360,41 @@ When a duplicate enters the window, move `left` until the duplicate is removed. 
 Example: `"zxyzxyz"` returns `3` for `"zxy"`.
 
 Time: `O(n)` · Space: `O(min(n, character set size))`
+
+### Minimum Window Substring
+
+**Pattern:** Variable-size sliding window with frequency maps.
+
+**Goal:** Find the smallest substring of `s` that contains every character in `t` with the required frequency, including duplicate characters.
+
+```text
+need = frequency map of characters in t
+window = empty frequency map
+left = 0
+formed = 0
+required = number of distinct characters in need
+bestWindow = empty
+
+for right from 0 to last index:
+    add s[right] to window
+    if s[right] reaches its required frequency:
+        formed++
+
+    while formed == required:
+        save the current window if it is smaller than bestWindow
+        remove s[left] from window
+        if a required character falls below its frequency:
+            formed--
+        move left rightward
+
+return bestWindow, or "" if no valid window exists
+```
+
+The `formed` counter tracks how many distinct required characters currently meet their target frequency. Once all requirements are satisfied, move `left` rightward to minimize the window while it remains valid.
+
+Example: `s = "ADOBECODEBANC"`, `t = "ABC"` returns `"BANC"`.
+
+Time: `O(n)` · Space: `O(k)`, where `k` is the number of distinct characters in `t`.
 
 ## Stack and Strings
 
