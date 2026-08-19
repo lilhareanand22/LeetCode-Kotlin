@@ -16,7 +16,7 @@ Concise notes for the algorithms in this repository. Start by recognizing the **
 | Stack | Need most-recent unfinished work first; nested brackets or matching pairs | Valid Parentheses, Decode String, Count of Atoms, Molecular Weight |
 | String prefix | All strings must share the same beginning characters | Longest Common Prefix |
 | Linked list reversal | Reverse the direction of links in a singly linked list | Reverse Linked List |
-| Fast and slow pointers | Find the middle of a linked list by moving two pointers at different speeds | Middle of the Linked List |
+| Fast and slow pointers | Find the middle of a linked list by moving two pointers at different speeds | [Middle of the Linked List](src/main/kotlin/linked/list/MiddleNote.kt) |
 
 ## How to choose a pattern
 
