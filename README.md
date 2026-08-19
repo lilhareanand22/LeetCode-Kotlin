@@ -161,6 +161,39 @@ return prefix
 
 Time: `O(n * m)` · Space: `O(1)`
 
+## Linked Lists
+
+### Reverse Linked List
+
+**Pattern:** Iterative linked-list reversal using three pointers.
+
+**Algorithm:**
+
+1. Set `prev` to `null` and `current` to the head node.
+2. While `current` is not `null`:
+   - Save the next node in `next`.
+   - Point `current.next` to `prev` to reverse the link.
+   - Move `prev` to `current`.
+   - Move `current` to the saved `next` node.
+3. Return `prev`, which is the new head of the reversed list.
+
+```text
+prev = null
+current = head
+
+while current is not null:
+    next = current.next
+    current.next = prev
+    prev = current
+    current = next
+
+return prev
+```
+
+Example: `1 -> 2 -> 3 -> 4 -> 5` becomes `5 -> 4 -> 3 -> 2 -> 1`.
+
+Time: `O(n)` · Space: `O(1)`
+
 ## Binary Search
 
 ### Standard Binary Search
