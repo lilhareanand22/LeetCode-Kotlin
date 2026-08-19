@@ -15,6 +15,7 @@ Concise notes for the algorithms in this repository. Start by recognizing the **
 | Sliding window | Find a longest, shortest, or counted contiguous subarray or substring | Longest Substring Without Repeating Characters, Longest Repeating Character Replacement, Minimum Window Substring |
 | Stack | Need most-recent unfinished work first; nested brackets or matching pairs | Valid Parentheses, Decode String, Count of Atoms, Molecular Weight |
 | String prefix | All strings must share the same beginning characters | Longest Common Prefix |
+| Linked list reversal | Reverse the direction of links in a singly linked list | Reverse Linked List |
 
 ## How to choose a pattern
 
