@@ -16,7 +16,7 @@ Concise notes for the algorithms in this repository. Start by recognizing the **
 | Stack | Need most-recent unfinished work first; nested brackets or matching pairs | Valid Parentheses, Decode String, Count of Atoms, Molecular Weight |
 | String prefix | All strings must share the same beginning characters | Longest Common Prefix |
 | Linked list reversal | Reverse the direction of links in a singly linked list | Reverse Linked List |
-| Fast and slow pointers | Find the middle of a linked list by moving two pointers at different speeds | [Middle of the Linked List](src/main/kotlin/linked/list/MiddleNote.kt) |
+| Fast and slow pointers | Find the middle of a linked list or detect a cycle by moving two pointers at different speeds | [Middle of the Linked List](src/main/kotlin/linked/list/MiddleNote.kt), [Linked List Cycle](src/main/kotlin/linked/list/LinkListCycle.kt) |
 
 ## How to choose a pattern
 
@@ -219,6 +219,40 @@ return slow
 ```
 
 Example: `1 -> 2 -> 3 -> 4 -> 5` returns node `3`.
+
+Time: `O(n)` · Space: `O(1)`
+
+### Linked List Cycle
+
+**Pattern:** Fast and slow pointers, also called Floyd's cycle detection algorithm.
+
+**Goal:** Determine whether a linked list contains a cycle.
+
+**Algorithm:**
+
+1. Set both `slow` and `fast` to the head node.
+2. Move `slow` one node at a time.
+3. Move `fast` two nodes at a time.
+4. If `slow` and `fast` point to the same node, a cycle exists.
+5. If `fast` reaches `null`, the list has no cycle.
+
+```text
+slow = head
+fast = head
+
+while fast is not null and fast.next is not null:
+    slow = slow.next
+    fast = fast.next.next
+
+    if slow == fast:
+        return true
+
+return false
+```
+
+Example with a cycle: `1 -> 2 -> 3 -> 2 ...` returns `true`.
+
+Example without a cycle: `1 -> 2 -> 3 -> null` returns `false`.
 
 Time: `O(n)` · Space: `O(1)`
 
