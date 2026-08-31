@@ -1,9 +1,5 @@
 package top37program
 
-
-
-
-
 fun majorityElement(nums: Array<Int>): Int {
     var count = 0
     var candidate = 0
