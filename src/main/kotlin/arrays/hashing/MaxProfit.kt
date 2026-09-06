@@ -20,7 +20,7 @@ fun maxProfit(prices : IntArray) : Int {
     return maxProfit
 }
 
-fun maxProfitOpt(prices: IntArray) : Int {
+private fun maxProfitOpt(prices: IntArray) : Int {
     var maxProfit =  0
     var minPrices = prices[0]
     for (i in 1 until prices.size) {
