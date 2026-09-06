@@ -22,7 +22,7 @@ fun twoSum(numbs : IntArray, target:Int) : IntArray {
 }
 
 //TwoSum - Optimized
-fun twoSumOptimized(numbs : IntArray, target:Int) : IntArray {
+private fun twoSumOptimized(numbs : IntArray, target:Int) : IntArray {
     val map = HashMap<Int, Int>()
     for (i in numbs.indices) {
         var complement = target - numbs[i]
