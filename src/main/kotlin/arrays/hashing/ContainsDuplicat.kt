@@ -7,7 +7,7 @@ fun main() {
 }
 
 
-fun containDuplicates(nums: IntArray) : Boolean {
+private fun containDuplicates(nums: IntArray) : Boolean {
     val map = HashMap<Int, Int> ()
     for (i in nums.indices) {
         var index = map[nums[i]]
