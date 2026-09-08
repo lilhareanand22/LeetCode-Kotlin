@@ -15,6 +15,7 @@ Concise notes for the algorithms in this repository. Start by recognizing the **
 | Sliding window | Find a longest, shortest, or counted contiguous subarray or substring | Longest Substring Without Repeating Characters, Longest Repeating Character Replacement, Minimum Window Substring |
 | Stack | Need most-recent unfinished work first; nested brackets or matching pairs | Valid Parentheses, Decode String, Count of Atoms, Molecular Weight |
 | String prefix | All strings must share the same beginning characters | Longest Common Prefix |
+| Linked list merge | Combine two already sorted linked lists while preserving sorted order | [Merge Two Sorted Lists](src/main/kotlin/linked/list/MergeTwoLists.kt) |
 | Linked list reversal | Reverse the direction of links in a singly linked list | Reverse Linked List |
 | Fast and slow pointers | Find the middle of a linked list or detect a cycle by moving two pointers at different speeds | [Middle of the Linked List](src/main/kotlin/linked/list/MiddleNote.kt), [Linked List Cycle](src/main/kotlin/linked/list/LinkListCycle.kt) |
 
@@ -255,6 +256,66 @@ Example with a cycle: `1 -> 2 -> 3 -> 2 ...` returns `true`.
 Example without a cycle: `1 -> 2 -> 3 -> null` returns `false`.
 
 Time: `O(n)` · Space: `O(1)`
+
+### Merge Two Sorted Linked Lists
+
+**Pattern:** Iterative linked-list merge using a dummy node and a tail pointer.
+
+**Goal:** Merge two sorted linked lists into one sorted linked list.
+
+**Algorithm:**
+
+1. Create a dummy node and use `tail` to track the end of the merged list.
+2. Compare the current nodes of both lists.
+3. Attach the smaller node to `tail.next` and move that list forward.
+4. Move `tail` to the newly attached node using `tail = tail.next!!`.
+5. When one list is empty, attach the remaining nodes from the other list.
+6. Return `dummy.next`, which is the head of the merged list.
+
+```text
+dummy = new node
+tail = dummy
+first = list1
+second = list2
+
+while first is not null and second is not null:
+    if first.value <= second.value:
+        tail.next = first
+        first = first.next
+    else:
+        tail.next = second
+        second = second.next
+
+    tail = tail.next
+
+if first is not null:
+    tail.next = first
+else:
+    tail.next = second
+
+return dummy.next
+```
+
+Example:
+
+```text
+list1: 1 -> 3 -> 5
+list2: 2 -> 4 -> 6
+result: 1 -> 2 -> 3 -> 4 -> 5 -> 6
+```
+
+Dry run:
+
+```text
+Compare 1 and 2 -> select 1
+Compare 3 and 2 -> select 2
+Compare 3 and 4 -> select 3
+Compare 5 and 4 -> select 4
+Compare 5 and 6 -> select 5
+Attach remaining 6
+```
+
+Time: `O(n + m)` · Space: `O(1)`
 
 ## Binary Search
 
