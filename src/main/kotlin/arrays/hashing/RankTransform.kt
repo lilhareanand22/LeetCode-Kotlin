@@ -21,7 +21,7 @@ fun arrayRankTransformBrute(arr: IntArray) : IntArray {
     return result
 }
 
-fun arrayRankTransform(arr: IntArray) : IntArray {
+private fun arrayRankTransform(arr: IntArray) : IntArray {
     if(arr.isEmpty()) return arr
     val sorted = arr.clone()
     sorted.sort()

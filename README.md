@@ -371,6 +371,42 @@ Time: `O(log n)` · Space: `O(1)`
 
 ## Two Pointers
 
+### Find the Index of the First Occurrence in a String
+
+Implementation: [FindTheIndexOfString.kt](src/main/kotlin/two_pointer/FindTheIndexOfString.kt)
+
+**Pattern:** Scan the input string and compare the target string at each possible starting index.
+
+**Goal:** Return the index of the first occurrence of `target` in `str`, or `-1` when the target is not found.
+
+**Algorithm:**
+
+1. If `target` is empty, return `0`.
+2. Check every possible starting index in `str` where `target` could fit.
+3. For each starting index, compare the characters of `str` and `target` one by one.
+4. If all characters match, return the current starting index.
+5. If no starting index matches, return `-1`.
+
+```text
+if target is empty: return 0
+for each valid starting index i in str:
+    compare str[i...] with target character by character
+    if every character matches: return i
+return -1
+```
+
+Example:
+
+```text
+str = "badluckbad"
+target = "bad"
+result = 0
+```
+
+The Kotlin `main` function prints `0` for this example.
+
+Time: `O(n * m)` Â· Space: `O(1)`, where `n` is the length of `str` and `m` is the length of `target`.
+
 ### Valid Palindrome
 
 **Pattern:** Two pointers moving inward from both ends.
