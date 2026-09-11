@@ -5,7 +5,21 @@ class ListNode1(var `val`: Int) {
 }
 
 
-/** Definition for singly-linked list. */
+/**
+ * Goal:
+ * Remove the nth node from the end of a singly linked list and return the
+ * updated head of the list.
+ *
+ * Algorithm:
+ * 1. Create a dummy node before the head to handle removing the first node.
+ * 2. Move the fast pointer n nodes ahead of the slow pointer.
+ * 3. Move both pointers one node at a time until fast reaches the last node.
+ * 4. Remove the node after slow by updating slow.next.
+ * 5. Return dummy.next.
+ *
+ * Time complexity: O(n)
+ * Space complexity: O(1)
+ */
 
 class Solution {
     fun removeNthFromEnd(
@@ -38,6 +52,15 @@ class Solution {
 }
 
 fun main() {
+    println("Goal: Remove the nth node from the end of a singly linked list.")
+    println()
+    println("Algorithm: Remove the nth node from the end of a linked list")
+    println("1. Create a dummy node before the head.")
+    println("2. Move the fast pointer n nodes forward.")
+    println("3. Move slow and fast together until fast reaches the last node.")
+    println("4. Skip the node after slow, removing the nth node from the end.")
+    println()
+
     val head = ListNode1(1).apply {
         next = ListNode1(2).apply {
             next = ListNode1(3).apply {
@@ -48,12 +71,21 @@ fun main() {
         }
     }
 
+    print("Original list: ")
+    printList(head)
+
     val result = Solution().removeNthFromEnd(head, 2)
 
-    var current = result
+    print("After removing the 2nd node from the end: ")
+    printList(result)
+}
+
+fun printList(head: ListNode1?) {
+    var current = head
     while (current != null) {
         print(current.`val`)
         current = current.next
         if (current != null) print(" -> ")
     }
+    println()
 }

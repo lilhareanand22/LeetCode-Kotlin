@@ -165,6 +165,26 @@ Time: `O(n * m)` · Space: `O(1)`
 
 ## Linked Lists
 
+| Problem | Solution | Pattern | Time | Space |
+|---|---|---|---|---|
+| Remove Nth Node From End | [RemovedNthNode.kt](src/main/kotlin/linked/list/RemovedNthNode.kt) | Fast and slow pointers with a dummy node | `O(n)` | `O(1)` |
+
+### Remove Nth Node From End
+
+**Pattern:** Two pointers with a fixed gap.
+
+**Algorithm:**
+
+1. Create a dummy node before the head.
+2. Move `fast` forward by `n` nodes.
+3. Move `slow` and `fast` together until `fast` reaches the last node.
+4. Remove the node after `slow`.
+5. Return `dummy.next` as the updated head.
+
+Example: Removing the 2nd node from `1 -> 2 -> 3 -> 4 -> 5` produces `1 -> 2 -> 3 -> 5`.
+
+Time: `O(n)` · Space: `O(1)`
+
 ### Reverse Linked List
 
 **Pattern:** Iterative linked-list reversal using three pointers.
