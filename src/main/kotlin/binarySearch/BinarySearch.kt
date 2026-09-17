@@ -2,12 +2,6 @@ package binarySearch
 
 
 
-
-
-
-
-
-
 fun main() {
     val nums = intArrayOf(-1, 0, 3, 5, 9, 12)
     val target = 9

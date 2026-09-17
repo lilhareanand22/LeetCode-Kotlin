@@ -15,10 +15,10 @@ fun searchInsert(nums: IntArray, target: Int): Int {
         when {
             nums[mid] == target -> return mid
 
-            nums[mid] < target ->
-                left = mid + 1
-            else ->
+            target < nums[mid] ->
                 right = mid -1
+
+            else -> left = mid+1
         }
     }
     return  left
