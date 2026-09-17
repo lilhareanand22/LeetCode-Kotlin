@@ -1,4 +1,6 @@
-package arrays.hashing
+package Blind75.array.hashing
+
+import kotlin.text.iterator
 
 fun main() {
     val s = "anagram"

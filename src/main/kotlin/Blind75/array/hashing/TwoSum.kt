@@ -1,4 +1,4 @@
-package arrays.hashing
+package Blind75.array.hashing
 
 fun main() {
     val nums = intArrayOf(2, 7, 11, 15)
