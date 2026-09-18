@@ -1,5 +1,6 @@
 package Blind75.array.hashing
 
+//https://neetcode.io/problems/longest-consecutive-sequence/question?list=blind75
 fun main() {
     val nums = intArrayOf(100, 4, 200, 1, 3, 2)
     val result = longestConsecutive(nums)

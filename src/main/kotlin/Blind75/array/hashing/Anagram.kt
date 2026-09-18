@@ -1,7 +1,7 @@
 package Blind75.array.hashing
 
 import kotlin.text.iterator
-
+//https://neetcode.io/problems/is-anagram/question
 fun main() {
     val s = "anagram"
     val t = "nagaram"

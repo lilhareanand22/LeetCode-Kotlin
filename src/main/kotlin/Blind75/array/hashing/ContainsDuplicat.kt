@@ -1,6 +1,6 @@
 package Blind75.array.hashing
 
-
+//https://neetcode.io/problems/duplicate-integer/question
 fun main() {
     val nums = intArrayOf(1,2,3,4)
     println("is contain is duplication in the array  :${containDuplicates(nums)}")

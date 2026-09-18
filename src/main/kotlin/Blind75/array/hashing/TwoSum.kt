@@ -1,5 +1,6 @@
 package Blind75.array.hashing
 
+//https://neetcode.io/problems/two-integer-sum/question?list=blind75
 fun main() {
     val nums = intArrayOf(2, 7, 11, 15)
     val target = 9

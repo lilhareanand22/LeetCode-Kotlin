@@ -1,6 +1,7 @@
 package Blind75.array.hashing
 
 
+//https://neetcode.io/problems/products-of-array-discluding-self/question?list=blind75
 fun main() {
     val numbs = intArrayOf(1,2,3,4)
     //var results = productExceptSelfDivision(numbs)
