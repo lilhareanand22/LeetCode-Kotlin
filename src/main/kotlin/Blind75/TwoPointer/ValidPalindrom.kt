@@ -1,6 +1,6 @@
-package two_pointer
+package Blind75.TwoPointer
 
-
+//https://neetcode.io/problems/is-palindrome/question?list=blind75
 
 fun isPalindrome(s: String): Boolean {
     var left = 0

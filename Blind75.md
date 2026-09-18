@@ -1,5 +1,11 @@
 # Blind 75 Progress
 
+## Two Pointer
+
+| Category | Program name | Complexity | Steps of algorithm |
+|---|---|---|---|
+| Two Pointer | [Valid Palindrome](src/main/kotlin/Blind75/TwoPointer/ValidPalindrom.kt) | Time: `O(n)` · Space: `O(1)` | 1. Set `left` at the start and `right` at the end of the string. 2. Skip non-alphanumeric characters from both sides. 3. Compare the lowercase characters at both pointers. 4. Return `false` when they differ. 5. Move both pointers inward and return `true` when they meet. |
+
 | Category | Program name | Complexity | Steps of algorithm |
 |---|---|---|---|
 | Arrays & Hashing | [Contains Duplicate](src/main/kotlin/Blind75/array/hashing/ContainsDuplicat.kt) | Time: `O(n)` · Space: `O(n)` | 1. Create an empty `HashSet`. 2. Scan each number. 3. If the number is already in the set, return `true`. 4. Otherwise add it to the set. 5. Return `false` after scanning all numbers. |
