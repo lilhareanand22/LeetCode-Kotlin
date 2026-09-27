@@ -24,10 +24,10 @@ fun secondLargest(num:Array<Int>) : Int? {
     var secondLargest: Int? = null
 
     for (value in num) {
-        if (largest == null || value >= largest!!) {
+        if (largest == null || value >= largest) {
             secondLargest = largest
             largest = value
-        } else if (secondLargest == null || value > secondLargest!!) {
+        } else if (secondLargest == null || value > secondLargest) {
             secondLargest = value
         }
     }

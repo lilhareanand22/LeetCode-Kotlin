@@ -14,11 +14,11 @@ fun groupAnagram(arr: Array<String>): List<List<String>> {
             .sorted()
             .joinToString("")
 
-//        if(!map.containsKey(key)) {
-//            map[key] = mutableListOf()
-//        }
-//        map[key]!!.add(word)
-        map.getOrPut(key) { mutableListOf()} .add(word)
+        if(!map.containsKey(key)) {
+            map[key] = mutableListOf()
+        }
+        map[key]!!.add(word)
+       // map.getOrPut(key) { mutableListOf()} .add(word)
     }
 
     return map.values.toList()

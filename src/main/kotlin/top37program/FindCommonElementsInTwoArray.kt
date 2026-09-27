@@ -38,26 +38,13 @@ fun main() {
 
    5. Final result = [3, 4]
 */
-fun findCommonElements(arr1: Array<Int>, arr2: Array<Int>): IntArray {
-    var maxValue = 0
-    for(number in arr1) {
-        if (number > maxValue ) maxValue = number
-    }
-    for(number in arr2) {
-        if(number > maxValue) maxValue = number
-    }
-    var presentInFirstArray = BooleanArray(maxValue + 1)
-    var alreadyAddInArray = BooleanArray(maxValue + 1)
-    var result = ArrayList<Int>()
-    for(num in arr1) {
-        presentInFirstArray[num] = true
-    }
-
-    for (number in arr2) {
-        if (presentInFirstArray[number] && !alreadyAddInArray[number]) {
-            result.add(number)
-            alreadyAddInArray[number] = true
-        }
-    }
-    return result.toIntArray()
+fun findCommonElements(arr1: Array<Int>, arr2: Array<Int>): List<Int>{
+   val set = arr1.toHashSet()
+   val result = mutableListOf<Int>()
+   for(num in arr2) {
+       if(num in set){
+           result.add(num)
+       }
+   }
+    return result
 }

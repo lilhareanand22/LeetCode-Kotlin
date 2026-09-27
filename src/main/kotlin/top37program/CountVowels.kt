@@ -19,3 +19,4 @@ fun countVowels(string: String): Int {
 
     return vowelCount
 }
+

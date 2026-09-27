@@ -1,5 +1,7 @@
 package two_pointer
 
+
+// Majority value
 fun strStr(haystack: String, needle: String): Int {
 
     if (needle.isEmpty()) return 0
@@ -34,6 +36,8 @@ fun findTargetIndex(str: String, target: String): Int {
 }
 
 fun findTargetIndexWithSubString(str: String, target: String): Int {
+    println("Length str : ${str.length}")
+    println("Target str : ${target.length}")
 
     for (i in 0..str.length - target.length) {
         if (str.substring(i, i + target.length) == target) {
