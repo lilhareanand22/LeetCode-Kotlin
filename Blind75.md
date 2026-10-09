@@ -1,5 +1,14 @@
 # Blind 75 Progress
 
+## Binary Search
+
+| Category | Program name | Complexity | Steps of algorithm |
+|---|---|---|---|
+| Binary Search | [Binary Search](src/main/kotlin/Blind75/binary/search/BinarySearch1.kt) | Time: `O(log n)` · Space: `O(1)` | 1. Set `left` to the first index and `right` to the last index. 2. Calculate the middle index. 3. Return the middle index when its value equals the target. 4. Search the left or right half based on the comparison. 5. Return `-1` when the target is not found. |
+| Binary Search | [Search Insert Position](src/main/kotlin/Blind75/binary/search/BinarySearchIfNotFoundThenSuggestIndex1.kt) | Time: `O(log n)` · Space: `O(1)` | 1. Set `left` and `right` to the bounds of the sorted array. 2. Compare the target with the middle value. 3. Narrow the search to the appropriate half. 4. Return the target index if found. 5. Return `left`, the position where the target should be inserted. |
+| Binary Search | [Find Minimum in Rotated Sorted Array](src/main/kotlin/Blind75/binary/search/FindMinumumInRotatedArray.kt) | Time: `O(log n)` · Space: `O(1)` | 1. Set `left` and `right` to the array bounds. 2. Compare the middle value with the rightmost value. 3. Move `left` right when the minimum is in the right half. 4. Otherwise move `right` to `mid`. 5. Return the value at the converged index. |
+| Binary Search | [Search in Rotated Sorted Array](src/main/kotlin/Blind75/binary/search/RotatedBinarySearch.kt) | Time: `O(log n)` · Space: `O(1)` | 1. Calculate the middle index. 2. Return the index when the middle value equals the target. 3. Identify which half is sorted. 4. Keep the target-containing half and discard the other half. 5. Return `-1` when the target is not found. |
+
 ## Two Pointer
 
 | Category | Program name | Complexity | Steps of algorithm |
