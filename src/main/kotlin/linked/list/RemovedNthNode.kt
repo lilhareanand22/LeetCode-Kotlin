@@ -52,15 +52,6 @@ class Solution {
 }
 
 fun main() {
-    println("Goal: Remove the nth node from the end of a singly linked list.")
-    println()
-    println("Algorithm: Remove the nth node from the end of a linked list")
-    println("1. Create a dummy node before the head.")
-    println("2. Move the fast pointer n nodes forward.")
-    println("3. Move slow and fast together until fast reaches the last node.")
-    println("4. Skip the node after slow, removing the nth node from the end.")
-    println()
-
     val head = ListNode1(1).apply {
         next = ListNode1(2).apply {
             next = ListNode1(3).apply {

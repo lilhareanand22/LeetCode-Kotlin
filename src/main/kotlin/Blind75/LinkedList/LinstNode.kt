@@ -1,6 +1,6 @@
 package Blind75.LinkedList
 
-internal class ListNode(
+class ListNode(
     var value: Int = 0,
     var next: ListNode? = null
 )
