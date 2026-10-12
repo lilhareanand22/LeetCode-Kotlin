@@ -1,7 +1,9 @@
 package linked.list
 
-import ListNode
-
+class ListNode(
+    var value: Int = 0,
+    var next: ListNode? = null
+)
 
 fun middleNode(head: ListNode?): ListNode? {
     var slow = head
