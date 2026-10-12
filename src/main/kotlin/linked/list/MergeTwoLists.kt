@@ -1,4 +1,9 @@
-import linked.list.ListNode
+
+
+class ListNode(
+    var value: Int = 0,
+    var next: ListNode? = null
+)
 
 fun mergeTwoLists(
     list1: ListNode?,

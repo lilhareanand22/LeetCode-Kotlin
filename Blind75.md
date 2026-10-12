@@ -1,5 +1,12 @@
 # Blind 75 Progress
 
+## Linked List
+
+| Category | Program name | Complexity | Steps of algorithm |
+|---|---|---|---|
+| Linked List | [Reverse Linked List](src/main/kotlin/Blind75/LinkedList/ReversedLinkList.kt) | Time: `O(n)` · Space: `O(1)` | 1. Set `current` to the head and `previous` to `null`. 2. Save the next node before changing the current node's link. 3. Point the current node to `previous`. 4. Move `previous` and `current` one node forward. 5. Return `previous` as the new head. |
+| Linked List | [Linked List Cycle](src/main/kotlin/Blind75/LinkedList/LinkedListCycle.kt) | Time: `O(n)` · Space: `O(1)` | 1. Initialize a slow pointer and a fast pointer at the head. 2. Move the slow pointer one step and the fast pointer two steps. 3. Return `true` when both pointers meet. 4. Return `false` when the fast pointer reaches the end of the list. |
+
 ## Binary Search
 
 | Category | Program name | Complexity | Steps of algorithm |

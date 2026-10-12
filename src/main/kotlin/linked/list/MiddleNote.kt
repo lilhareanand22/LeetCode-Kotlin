@@ -1,5 +1,6 @@
 package linked.list
 
+import ListNode
 
 
 fun middleNode(head: ListNode?): ListNode? {

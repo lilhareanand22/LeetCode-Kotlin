@@ -1,22 +1,7 @@
-package linked.list
+package Blind75.LinkedList
 
 
 
-
-fun hasCycle(head: ListNode?): Boolean {
-    var slow = head
-    var fast = head
-
-    while(fast != null && fast.next != null) {
-        slow = slow?.next
-        fast = fast.next?.next
-
-        if(slow == fast) {
-            return true
-        }
-    }
-    return false
-}
 
 fun main() {
     // Positive input: 1 -> 2 -> 3 -> 2 ...
@@ -34,4 +19,17 @@ fun main() {
     val nonCycleHead = ListNode(1, ListNode(2, ListNode(3)))
 
     println("Negative input has cycle: ${hasCycle(nonCycleHead)}")
+}
+
+internal fun hasCycle(head:ListNode?) : Boolean {
+    var slow = head
+    var fast = head
+    while(fast !=null && fast.next!= null) {
+        slow = slow?.next
+        fast = fast.next?.next
+        if(slow == fast) {
+            return true
+        }
+    }
+    return false
 }
