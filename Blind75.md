@@ -4,6 +4,12 @@
 
 | Category | Program name | Complexity | Steps of algorithm |
 |---|---|---|---|
+| Linked List | [Reorder List](src/main/kotlin/Blind75/LinkedList/ReOrderLinkedList.kt) | Time: `O(n)` · Space: `O(1)` | 1. Find the middle of the list with slow and fast pointers. 2. Split the list into two halves. 3. Reverse the second half. 4. Merge the two halves by alternating nodes. |
+
+## Linked List
+
+| Category | Program name | Complexity | Steps of algorithm |
+|---|---|---|---|
 | Linked List | [Middle of the Linked List](src/main/kotlin/Blind75/LinkedList/MiddleNode.kt) | Time: `O(n)` · Space: `O(1)` | 1. Initialize slow and fast pointers at the head. 2. Move slow one node and fast two nodes at a time. 3. Continue until fast reaches the end. 4. Return slow, which points to the middle node. |
 | Linked List | [Remove Nth Node From End](src/main/kotlin/Blind75/LinkedList/RemoveNthFromEnd.kt) | Time: `O(n)` · Space: `O(1)` | 1. Create a dummy node before the head. 2. Move the fast pointer `n` nodes ahead. 3. Move the slow and fast pointers together until fast reaches the end. 4. Remove the node after slow. 5. Return the node after the dummy node. |
 | Linked List | [Merge Two Sorted Lists](src/main/kotlin/Blind75/LinkedList/MergedTwoLists.kt) | Time: `O(n + m)` · Space: `O(1)` | 1. Create a dummy node to simplify building the result list. 2. Compare the current nodes of both sorted lists. 3. Append the smaller node and advance that list. 4. Attach the remaining nodes after one list is exhausted. 5. Return the node after the dummy node. |
