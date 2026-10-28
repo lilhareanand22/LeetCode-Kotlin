@@ -49,6 +49,26 @@ fun maxArea(height: IntArray) : Int {
     return maxArea
 }
 
+fun maxArea1(height: IntArray): Int {
+
+    var maxWater = 0
+
+    for (i in height.indices) {
+
+        for (j in i + 1 until height.size) {
+
+            val width = j - i
+
+            val minHeight = minOf(height[i], height[j])
+
+            val area = width * minHeight
+
+            maxWater = maxOf(maxWater, area)
+        }
+    }
+
+    return maxWater
+}
 fun main() {
     val heights = intArrayOf(1, 8, 6, 2, 5, 4, 8, 3, 7)
     println("Maximum water container area: ${maxArea(heights)}")
