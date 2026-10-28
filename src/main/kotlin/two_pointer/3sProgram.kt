@@ -1,8 +1,7 @@
 package two_pointer
 
 fun main() {
-    val nums = intArrayOf(-1, 0, 1, 2, -1, -4)
-    println(threeSum(nums))
+
 }
 
 /**
@@ -67,5 +66,29 @@ fun threeSum(nums: IntArray): List<List<Int>> {
     }
     return result
 }
+
+fun threeSums(nums: IntArray) : List<List<Int>> {
+    val result = mutableListOf<List<Int>>()
+    val tripleSume = mutableSetOf<List<Int>>()
+
+    for(i in nums.indices) {
+        for(j in i+1 until nums.size) {
+            for(k in j+1 until nums.size) {
+                if(nums[i] + nums[j] + nums[k] == 0){
+
+                    val triple = listOf(
+                        nums[i],
+                        nums[j],
+                        nums[k]
+                    ).sorted()
+                    tripleSume.add(triple)
+                }
+            }
+        }
+    }
+     result.addAll(tripleSume)
+    return result
+}
+
 
 

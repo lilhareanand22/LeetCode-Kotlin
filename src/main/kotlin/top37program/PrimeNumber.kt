@@ -22,7 +22,5 @@ fun isPrime(num: Int): Boolean {
       }
       divisor += 2
   }
-
     return true
-
 }
