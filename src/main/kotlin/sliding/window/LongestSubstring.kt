@@ -22,7 +22,7 @@ fun lengthOfLongestSubstring(s: String): Int {
 
     for (right in s.indices) {
 
-        while (s[right] in set) {
+        while (set.contains(s[right])) {
             set.remove(s[left])
             left++
         }
